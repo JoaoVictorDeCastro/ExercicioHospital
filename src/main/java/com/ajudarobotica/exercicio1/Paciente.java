@@ -13,8 +13,10 @@ public class Paciente extends Pessoa implements IPessoa{
     }
 
     @Override
-    public String informacoes() {
-       return " ";
+    public void informacoes() {
+       getNome();
+       getDataNascimento();
+       getCpf();
     }
     
 }
