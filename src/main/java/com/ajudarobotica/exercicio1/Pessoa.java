@@ -35,7 +35,7 @@ public abstract class Pessoa {
         this.cpf = cpf;
     }
 
-    void getDataNascimento(String dataNascimento) {
+    void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 }

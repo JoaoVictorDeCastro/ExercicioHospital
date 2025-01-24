@@ -1,0 +1,6 @@
+com\ajudarobotica\exercicio1\Pessoa.class
+com\ajudarobotica\exercicio1\controllers\PacienteController.class
+com\ajudarobotica\exercicio1\database\PacienteRepository.class
+com\ajudarobotica\exercicio1\IPessoa.class
+com\ajudarobotica\exercicio1\Main.class
+com\ajudarobotica\exercicio1\Paciente.class
