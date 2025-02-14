@@ -5,23 +5,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.ajudarobotica.exercicio1.Paciente;
-import com.ajudarobotica.exercicio1.database.PacienteRepository;
-import com.google.gson.Gson;
+import com.ajudarobotica.exercicio1.model.Paciente;
+import com.ajudarobotica.exercicio1.service.PacienteService;
 
 @RestController
 public class PacienteController {
-    Gson gson = new Gson();
-    PacienteRepository pacienteRepository = new PacienteRepository();
+    PacienteService pacienteService;
+
+    public PacienteController(PacienteService pacienteService) {
+        this.pacienteService = pacienteService;
+    }
 
     @GetMapping("/pacientes")
-    public String getPacientes() {
-        List<Paciente> response = pacienteRepository.getAll();
-        return gson.toJson(response);
+    public List<Paciente> getPacientes() {
+        return pacienteService.getAll();
     }
 
     @PostMapping("/pacientes")
     public void insertPacientes(@RequestBody Paciente paciente) {
-        pacienteRepository.insert(paciente);
+        pacienteService.save(paciente);
     }
 }
